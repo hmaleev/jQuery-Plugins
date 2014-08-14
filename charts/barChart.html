@@ -4,22 +4,20 @@
         <meta charset="utf-8" />
         <title>Bar Chart</title>
         <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js"></script>
-		<script src="jqueryChartPlugins.js" ></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-debug.js" ></script>
+		<script src="jqueryChartPlugins.js" ></script>	
     </head>
     <body>
-       <canvas id="canvas1"  height="300px"></canvas>	  <span>canvas 2</span>
-       <canvas id="canvas2" width="500px" height="200px"></canvas>
-		  <p></p>
-		  <canvas id="canvas3" width="500px" height="200px"></canvas>
-<script type="text/javascript">
-
-	var canvas= $("#canvas1");
-	canvas.barChart([88,20,100,40],10,['test1','test2','test3','test4']);
-	var canvas2= $("#canvas2");
-	canvas2.barChart([30,20,36,42,24,18],5,['test1','test2','test3','test4','test3','test4']);
-	
-	var canvas3= $("#canvas3");
-	canvas3.pieChart();
-</script>
+        <canvas id="canvas1" ></canvas>
+        <script type="text/javascript">
+            var opt = {
+            	inputData:[30,20,36,42,24,18],
+            	lineCount:15,
+            	labels:['test1','test2','test3','test4','test3','test4'],
+                height:400
+            }
+        var canvas= $("#canvas1");
+        canvas.barChart(opt);
+        </script>
     </body>
 </html>
